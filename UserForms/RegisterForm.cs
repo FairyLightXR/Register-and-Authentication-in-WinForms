@@ -37,14 +37,44 @@ namespace Practice_3_01_Gundorov.UserForms
             if (TxtLogin.Text == "" || TxtPsw.Text == "" 
                 || TxtPsw2.Text == "" || TxtFIO.Text =="")
             {
-                Users usr = new Users();
+                MessageBox.Show("Не все данные введены!");
+                return;
+
+            }
+            if (TxtPsw.Text != TxtPsw2.Text)
+            {
+                MessageBox.Show("Введённые пароль не совпадает с первым");
+                return;
+            }
+            Users usr = Program.db.Users.Find(TxtLogin.Text);
+            if (usr != null)
+            {
+                MessageBox.Show("Пользователь с таким логином уже существует");
+                return;
+            }
+            else
+            {
+                usr = new Users();
                 usr.Login = TxtLogin.Text;
                 usr.Password = TxtPsw.Text;
                 usr.RoleID = (int)CmbRoles.SelectedValue;
                 usr.FIO = TxtFIO.Text;
+            }
+            
+            Program.db.Users.Add(usr);
+            try
+            {
+                Program.db.SaveChanges();
+                MessageBox.Show($"Пользователь {TxtLogin.Text} успешно зарегистрирован!");
+                this.Hide();
+                prevForm.Show();
 
             }
-            else if 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
         }
     }
 }
