@@ -12,6 +12,8 @@ namespace Practice_3_01_Gundorov.UserForms
 {
     public partial class AdminForm : Form
     {
+        public Form prevForm = null;
+
         public AdminForm()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace Practice_3_01_Gundorov.UserForms
         private void BtnAddUser_Click(object sender, EventArgs e)
         {
             RegisterForm reg = new RegisterForm(); //Создание объекта формы регистрации
-            this.Hide();
+            reg.prevForm = this;
             reg.Show();
 
         }

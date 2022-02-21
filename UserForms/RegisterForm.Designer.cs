@@ -138,6 +138,7 @@ namespace Practice_3_01_Gundorov.UserForms
             this.BtnRegister.TabIndex = 2;
             this.BtnRegister.Text = "Регистрация";
             this.BtnRegister.UseVisualStyleBackColor = true;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // BtnBack
             // 
@@ -147,6 +148,7 @@ namespace Practice_3_01_Gundorov.UserForms
             this.BtnBack.TabIndex = 2;
             this.BtnBack.Text = "Выход";
             this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // CmbRoles
             // 
@@ -183,6 +185,7 @@ namespace Practice_3_01_Gundorov.UserForms
             this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(407, 509);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();

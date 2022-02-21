@@ -39,7 +39,7 @@ namespace Practice_3_01_Gundorov.UserForms
             // 
             this.LblHello.AutoSize = true;
             this.LblHello.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LblHello.Location = new System.Drawing.Point(22, 83);
+            this.LblHello.Location = new System.Drawing.Point(12, 51);
             this.LblHello.Name = "LblHello";
             this.LblHello.Size = new System.Drawing.Size(131, 20);
             this.LblHello.TabIndex = 0;
@@ -85,6 +85,7 @@ namespace Practice_3_01_Gundorov.UserForms
             this.Controls.Add(this.LblHello);
             this.MaximumSize = new System.Drawing.Size(406, 400);
             this.Name = "AdminForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.ResumeLayout(false);
